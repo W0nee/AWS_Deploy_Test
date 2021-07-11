@@ -34,8 +34,7 @@ public class OauthKakaoService {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("grant_type", grantType);
         params.add("client_id", kakaoOauth2ClinetId);
-//        params.add("redirect_uri", frontendRedirectUrl + "/auth/kakao/callback");
-        params.add("redirect_uri", frontendRedirectUrl);
+        params.add("redirect_uri", frontendRedirectUrl + "/auth/kakao/callback");
         params.add("code", code);
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(params, headers);
