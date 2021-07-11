@@ -15,6 +15,16 @@ public class UserController {
 
     private final UserService userService;
 
+    @RestController
+    public class TestController {
+        @GetMapping("/test")
+        public String test(){
+            String testStr = "Hi~~";
+            System.out.println(testStr);
+            return testStr;
+        }
+    }
+
     /** 소셜로그인_NAVER 토큰 발급 및 사용자 정보 조회 API */
     @GetMapping("/login/naver")
     public UserDto authorizeNaver(@RequestParam("code") String code, @RequestParam("state") String state) {
