@@ -3,9 +3,10 @@ os: linux
 
 files:
   - source: /
-    destination: /opt/testapp
+    destination: /home
+    overwrite: yes
 permissions:
-  - object: /opt/testapp/
+  - object: /home
     owner: ubuntu
     group: ubuntu
     mode: 755
