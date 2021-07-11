@@ -2,6 +2,8 @@ package com.ducks.goodsduck.commons.controller;
 
 import com.ducks.goodsduck.commons.model.dto.JwtDto;
 import com.ducks.goodsduck.commons.service.JwtService;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,11 +11,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/jwt")
 public class JwtController {
 
-    @Autowired
-    private JwtService jwtService;
+    private final JwtService jwtService;
 
     // 개발 테스트용 (토큰 발급)
     @GetMapping("/gen/token")
